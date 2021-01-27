@@ -12,20 +12,20 @@ var person_2 = new person("katy" , 100211 , 500)
 
 function deposit(amount){
     person_1.balance += parseFloat(amount);
-    return person_1.balance;
+    window.alert (person_1.balance);
 }
 function withdraw(amount){
     if(person_1.balance - amount > 100 && amount < person_1.balance){
         person_1.balance -= amount;
-        return person_1.balance 
+        window.alert (person_1.balance); 
     }
     else{
-        return "your account have the sufficient balance to do the withdrawal. please enter a reasonable number!!!"
+        window.alert ("your account have the sufficient balance to do the withdrawal. please enter a reasonable number!!!")
     }
 }
 
 function balance(){
-    return "your account " + person_1.account + " has a balance of " + person_1.balance
+    window.alert ("your account " + person_1.account + " has a balance of " + person_1.balance);
 }
 
 function transfer(amount){
@@ -33,33 +33,36 @@ function transfer(amount){
         person_1.balance -= amount;
         person_2.balance += amount
     }
+    else{
+        window.alert("Not sufficient balance")
+    }
 }
 
 function init(){
     while (true){
         var operation = prompt ("Please choose the service you want to use. 1) deposit 2) withdraw 3) balance 4) Transfer 5) to exit");
         if (operation == 5) {
-            console.log("Thanks for using our bank. See you next time.");
+            window.alert("Thanks for using our bank. See you next time.");
             break;
         }
         else if (operation == 1) {
             var amount = prompt("Enter the money you want to deposit:")
             if(isNaN(amount)){
-                console.log("Invalid input");
+                window.alert ("Invalid input");
             }
             else deposit(amount);
         } 
         else if (operation == 2) {
             var amount = prompt("Enter the money you want to withdraw:")
             if(isNaN(amount)){
-                console.log("Invalid input");
+                window.alert("Invalid input");
             }
             else withdraw(amount);
         } 
         else if (operation == 4) {
             var amount = prompt("Enter the money you want to transfer:")
             if(isNaN(amount)){
-                console.log("Invalid input");
+                window.alert("Invalid input");
             }
             else transfer(amount);
         } 
@@ -67,7 +70,7 @@ function init(){
             balance();
         }
         else{
-            console.log("Invalid input");
+            window.alert("Invalid input");
         } 
     }
 } init();
