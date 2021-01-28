@@ -40,7 +40,7 @@ function transfer(amount){
 
 function init(){
     while (true){
-        var operation = prompt ("Please choose the service you want to use. 1) deposit 2) withdraw 3) balance 4) Transfer 5) to exit");
+        var operation = prompt ("Please choose the service you want to use.\n 1) deposit \n 2) withdraw \n 3) balance \n 4) Transfer \n 5) to exit");
         if (operation == 5) {
             window.alert("Thanks for using our bank. See you next time.");
             break;
@@ -70,7 +70,7 @@ function init(){
             balance();
         }
         else{
-            window.alert("Invalid input");
+            console.log("Invalid input");
         } 
     }
 } init();

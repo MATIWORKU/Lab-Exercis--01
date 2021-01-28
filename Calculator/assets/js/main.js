@@ -41,8 +41,9 @@ function division(fn,sn)
 (function()
 {
     while (true){
-        operation = prompt("Enter the number for the operation you need  1 for addition 2 for subtraction 3 for multiplication 4 for division")
-        if (operation == 'q') {
+        operation = prompt("Enter the number for the operation you need. \n 1) for addition \n 2) for subtraction \n 3) for multiplication \n 4) for division \n 5) to Exit")
+        if (operation == 5) {
+            console.log("Thanks for using our calculator. BYE!!!");
             break;
         }
         else if(operation == 1){
